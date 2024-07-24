@@ -69,10 +69,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sound',
+        'USER': 'postgres',
+        'PASSWORD': '272371rad',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -124,3 +129,8 @@ ALGORITHM = 'HS256'
 ACCESS_TOKEN_EXPIRE_MINUTES = 60*24
 
 GOOGLE_CLIENT_ID = '1042943899585-b6ulli1nqu85r3hm6g2tjo4va0v2o32p.apps.googleusercontent.com'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
+]
